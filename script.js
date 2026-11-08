@@ -552,5 +552,31 @@ shieldTime = 0;
     lastSpawn = 0;
     running = true;
 }
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+const fireBtn = document.getElementById("fireBtn");
+
+leftBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    keys["ArrowLeft"] = true;
+});
+
+leftBtn.addEventListener("touchend", function() {
+    keys["ArrowLeft"] = false;
+});
+
+rightBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    keys["ArrowRight"] = true;
+});
+
+rightBtn.addEventListener("touchend", function() {
+    keys["ArrowRight"] = false;
+});
+
+fireBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    if (running) shoot();
+});
 
 requestAnimationFrame(gameLoop);
