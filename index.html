@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmic Blaster - Space Shooter</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+    <main class="game-wrapper">
+
+        <div id="startScreen">
+
+            <h1>🚀 Cosmic Blaster</h1>
+
+            <p>Welcome to my Space Shooter Game!</p>
+
+            <h2>Ready for Battle?</h2>
+
+            <p>Use your keyboard to control your spaceship.</p>
+
+            <div class="difficulty-buttons">
+                <button id="easyBtn"
+                    onclick="setDifficulty('easy')">
+                    Easy
+                </button>
+
+                <button id="mediumBtn"
+                    onclick="setDifficulty('medium')">
+                    Medium
+                </button>
+
+                <button id="hardBtn"
+                    onclick="setDifficulty('hard')">
+                    Hard
+                </button>
+            </div>
+
+            <button onclick="startGame()">
+                Start Game
+            </button>
+
+        </div>
+
+        <div class="game-container">
+
+            <canvas id="gameCanvas"
+                width="600"
+                height="400">
+                </canvas>
+
+<button id="restartBtn" onclick="startGame()">
+    🔄 Restart Game
+</button>
+
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
