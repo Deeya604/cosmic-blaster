@@ -19,13 +19,23 @@
 }
 
 #mobileControls button {
-    font-size: 22px;
-    padding: 15px 22px;
-    border: none;
-    border-radius: 12px;
-    background: #2563eb;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 16px 24px;
+    border: 2px solid #00eaff;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #001f5c, #0066ff);
     color: white;
+    box-shadow: 0 0 10px #00eaff, 0 0 25px #0066ff;
+    text-shadow: 0 0 8px white;
     touch-action: none;
+    cursor: pointer;
+}
+
+#mobileControls button:active {
+    transform: scale(0.9);
+    background: #00aaff;
+    box-shadow: 0 0 25px #00eaff;
 }
 
 @media (min-width: 768px) {
