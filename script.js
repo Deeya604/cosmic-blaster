@@ -16,6 +16,7 @@ let explosions = [];
 let powerUps = [];
 let powerUpEffects = [];
 let score = 0;
+let highScore = localStorage.getItem("cosmicHighScore") || 0;
 let lives = 3;
 let powerUpMessage = "";
 let powerUpMessageTime = 0;
@@ -409,6 +410,10 @@ powerUps = powerUps.filter(p =>
                 e.dead = true;
                 b.dead = true;
                 score += 10;
+                if (score > highScore) {
+    highScore = score;
+    localStorage.setItem("cosmicHighScore", highScore);
+}
                 playHitSound();
                 createExplosion(e.x + 17, e.y + 15);
                 createPowerUp(e.x + 17, e.y + 15);
@@ -472,6 +477,7 @@ ctx.font = "bold 20px Arial";
 
 ctx.fillText("⭐ SCORE: " + score, 15, 30);
 ctx.fillText("❤️ LIVES: " + lives, 465, 30);
+ctx.fillText("🏆 BEST: " + highScore, 15, 60);
 
 ctx.shadowBlur = 0;
 
